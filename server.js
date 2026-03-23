@@ -1,17 +1,13 @@
-require('dotenv').config()
-require('express-async-errors')
-const app = require('./app')
-const connectDB = require('./config/db')
+require('dotenv').config();
+require('express-async-errors');
 
-const PORT = process.env.PORT || 8000
+const app = require('./app');
+const connectDB = require('./config/db');
 
-connectDB()
+const PORT = process.env.PORT || 8000;
 
-
-app.get("/", (req, res) => {
-  res.send("Notewave API is running 🚀");
-});
+connectDB();
 
 app.listen(PORT, () => {
-  console.log(`🚀 Notewave server running on port ${PORT}`)
-})
+  console.log(`🚀 Notewave server running on port ${PORT}`);
+});
